@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bve3r4c4qejwl"]
+
+[ext_resource type="Texture2D" uid="uid://cga4vh334fkyq" path="res://environment-assets/grass.png" id="1_f7xu0"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(16, 0)
+
+[node name="Grass" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(8, 8)
+scale = Vector2(0.166667, 0.166667)
+texture = ExtResource("1_f7xu0")
