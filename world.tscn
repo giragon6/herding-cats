@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://emach7ggptef"]
+[gd_scene load_steps=13 format=4 uid="uid://emach7ggptef"]
 
 [ext_resource type="PackedScene" uid="uid://skwcbdlyxcxl" path="res://Player/player.tscn" id="1_k8t4g"]
+[ext_resource type="Script" path="res://world.gd" id="1_oroqs"]
 [ext_resource type="Texture2D" uid="uid://y5ijh7ubcqka" path="res://environment-assets/stonefences-tilemap.png" id="2_0ds0f"]
 [ext_resource type="Texture2D" uid="uid://cga4vh334fkyq" path="res://environment-assets/grass.png" id="2_lo1u4"]
 [ext_resource type="Texture2D" uid="uid://8ske0gdn5wvy" path="res://environment-assets/woodfence-tilemap.png" id="3_arvng"]
+[ext_resource type="PackedScene" uid="uid://bnbn7gb044bui" path="res://cat.tscn" id="5_36dix"]
+[ext_resource type="PackedScene" uid="uid://63gjtwfjkr6t" path="res://pen.tscn" id="7_8k62r"]
+[ext_resource type="PackedScene" uid="uid://bybntm27bhq23" path="res://gate.tscn" id="8_r5evg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_asxin"]
 texture = ExtResource("3_arvng")
@@ -77,15 +81,10 @@ sources/0 = SubResource("TileSetAtlasSource_asxin")
 sources/1 = SubResource("TileSetAtlasSource_vyqh2")
 
 [sub_resource type="GDScript" id="GDScript_o0w52"]
-script/source = "extends Node2D
-
-var rng = RandomNumberGenerator.new()
-
-func spawnCat():
-	pass
-"
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_oroqs")
+cat_scene = ExtResource("5_36dix")
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(360, 208)
@@ -110,3 +109,9 @@ region_rect = Rect2(0, 0, 1440, 832)
 
 [node name="Cats" type="Node2D" parent="."]
 script = SubResource("GDScript_o0w52")
+
+[node name="Pen" parent="." instance=ExtResource("7_8k62r")]
+position = Vector2(352, 200)
+
+[node name="Gate" parent="." instance=ExtResource("8_r5evg")]
+position = Vector2(352, 200)

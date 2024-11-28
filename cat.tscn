@@ -188,6 +188,11 @@ animations = [{
 "name": &"Sit",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"Walk Left",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4dklb")
@@ -286,7 +291,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_7tfoy")
 }],
 "loop": true,
-"name": &"Walk",
+"name": &"Walk Up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -303,7 +313,7 @@ script = ExtResource("1_n6yni")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tqwim")
-animation = &"Sit"
+animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_j7tmv")
