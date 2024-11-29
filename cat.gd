@@ -194,8 +194,7 @@ func init_anim() -> void:
 	var file_names := cat_assets_dir.get_files()
 	var cat_textures: Array
 	for file in file_names:
-		if file.ends_with("png"):
-			cat_textures.append(file)
+		cat_textures.append(file.trim_suffix(".import"))
 	var random_cat_texture : String = cat_textures[randi() % cat_textures.size()]
 	var full_spritesheet : Texture = load("res://cat-assets/"+random_cat_texture)
 	for dir_key in Direction.keys():

@@ -18,6 +18,9 @@ func hide_submsg() -> void:
 func update_cats() -> void:
 	$CatsLabel.text = "Cats Contained: " + str(Game.captured_cats) + "/" + str(Game.NUM_CATS)
 	
+func update_timer() -> void:
+	$Timer.text = "Time Elapsed: " + str(Game.timer) + " seconds"
+	
 func start() -> void:
 	show_msg("HERDING CATS")
 	show_submsg("CONTAIN THE FELINES\nPress any key to start\nPress space to open/close gate")
@@ -25,3 +28,4 @@ func start() -> void:
 	
 func game_over() -> void:
 	show_msg("SUCCESS!!!")
+	show_submsg("Time: " + str(Game.timer) + " seconds")

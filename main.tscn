@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://emach7ggptef"]
+[gd_scene load_steps=15 format=4 uid="uid://emach7ggptef"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_lay4n"]
 [ext_resource type="PackedScene" uid="uid://bnbn7gb044bui" path="res://cat.tscn" id="2_pjfnd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://63gjtwfjkr6t" path="res://pen.tscn" id="7_rgsc3"]
 [ext_resource type="PackedScene" uid="uid://bybntm27bhq23" path="res://gate.tscn" id="8_2xy0p"]
 [ext_resource type="Script" path="res://hud.gd" id="9_uf0nv"]
+[ext_resource type="AudioStream" uid="uid://dsblpaou2ohuc" path="res://fast-chiptune-for-gaming-videos-253097.mp3" id="10_i2wki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_asxin"]
 texture = ExtResource("4_63174")
@@ -163,7 +164,22 @@ grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
-text = "Press any key to start
+text = "CONTAIN THE FELINES
+Press any key to start
 Press space to open/close gate"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Label" parent="HUD"]
+offset_top = 19.0
+offset_right = 40.0
+offset_bottom = 42.0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_i2wki")
+autoplay = true
+parameters/looping = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

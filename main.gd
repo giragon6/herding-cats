@@ -16,6 +16,7 @@ const spawn_positions = [
 	Vector2(384,320),
 	Vector2(640,320),
 ]
+var started = false
 
 func _ready() -> void:
 	$HUD.start()
@@ -26,9 +27,12 @@ func _ready() -> void:
 		cats.add_child(cat)
 		
 func _physics_process(delta: float) -> void:
-	if Input.is_anything_pressed():
+	if started == false and Input.is_anything_pressed():
 		$HUD.hide_msg()
 		$HUD.hide_submsg()
+		$HUD.update_timer()
+		$Timer.start()
+		started = true
 	if Input.is_action_just_pressed("ui_accept"):
 		gate.visible = !gate.visible
 		gate.collision_enabled = !gate.collision_enabled
@@ -39,3 +43,7 @@ func _physics_process(delta: float) -> void:
 
 func gen_cat() -> Cat:
 	return cat_scene.instantiate()
+
+func _on_timer_timeout() -> void:
+	Game.timer += 1
+	$HUD.update_timer()
