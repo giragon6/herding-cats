@@ -1,23 +1,169 @@
-[gd_scene load_steps=2 format=3 uid="uid://fyodifjikt6b"]
+[gd_scene load_steps=14 format=4 uid="uid://emach7ggptef"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_lay4n"]
+[ext_resource type="PackedScene" uid="uid://bnbn7gb044bui" path="res://cat.tscn" id="2_pjfnd"]
+[ext_resource type="PackedScene" uid="uid://skwcbdlyxcxl" path="res://Player/player.tscn" id="3_k8hh4"]
+[ext_resource type="Texture2D" uid="uid://8ske0gdn5wvy" path="res://environment-assets/woodfence-tilemap.png" id="4_63174"]
+[ext_resource type="Texture2D" uid="uid://y5ijh7ubcqka" path="res://environment-assets/stonefences-tilemap.png" id="5_lhp1a"]
+[ext_resource type="Texture2D" uid="uid://cga4vh334fkyq" path="res://environment-assets/grass.png" id="6_orcn5"]
+[ext_resource type="PackedScene" uid="uid://63gjtwfjkr6t" path="res://pen.tscn" id="7_rgsc3"]
+[ext_resource type="PackedScene" uid="uid://bybntm27bhq23" path="res://gate.tscn" id="8_2xy0p"]
+[ext_resource type="Script" path="res://hud.gd" id="9_uf0nv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_asxin"]
+texture = ExtResource("4_63174")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, 8, -3, 8, -3, -3, 2, -3, 2, -6, 8, -6, 8, 6, 2, 6)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6, 8, -6, 8, 6, -8, 6)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -3, 2, -3, 3, 8, -2, 8)
+2:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-2, -6, -8, -6, -8, 6, -2, 6)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6, 8, -6, 8, 6, -8, 6)
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, 2, -8, 2, 8, -3, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, 2, -8, 2, 8, -3, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -6, 8, -6, 8, 6, 2, 6)
+0:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(2, -8, -3, -8, -3, 4, 2, 4)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6, 8, -6, 8, 6, -8, 6)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -8, 3, -8, 3, 4, -2, 4)
+2:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-2, -6, -8, -6, -8, 6, -2, 6)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6, 8, -6, 8, 6, -8, 6)
+6:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vyqh2"]
+texture = ExtResource("5_lhp1a")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 4, 2, 4, 2, -4, 8, -4, 8, -4, 8, -4)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(3, 8, -3, 8, -3, -3, 3, -3)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 4, -8, 4)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, -2, 4, -2, -4, -8, -4, -8, -4, -8, -4)
+2:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-3, 8, 3, 8, 3, -3, -3, -3)
+4:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(3, -8, 3, 8, -3, 8, -3, -8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(3, -8, 3, 8, -3, 8, -3, -8)
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -4, 2, -4, 2, 4, 8, 4, 8, 4, 8, 4)
+0:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(3, -8, -3, -8, -3, 3, 3, 3)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 4, -8, 4)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, -2, -4, -2, 4, -8, 4, -8, 4, -8, 4)
+2:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-3, -8, 3, -8, 3, 3, -3, 3)
+4:2/0 = 0
+6:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0pi4t"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_asxin")
+sources/1 = SubResource("TileSetAtlasSource_vyqh2")
+
+[sub_resource type="GDScript" id="GDScript_o0w52"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lay4n")
+cat_scene = ExtResource("2_pjfnd")
 
-[node name="Play" type="Button" parent="."]
-offset_left = 154.0
-offset_top = 20.0
-offset_right = 305.0
-offset_bottom = 105.0
-text = "Play"
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(360, 208)
+scale = Vector2(0.5, 0.5)
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 154.0
-offset_top = 146.0
-offset_right = 305.0
-offset_bottom = 231.0
-text = "Quit"
+[node name="Player" parent="Player" instance=ExtResource("3_k8hh4")]
+position = Vector2(-656, -352)
+scale = Vector2(2, 2)
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="Fence" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAASAAAAAQABAAAAAAAKAAAAAQABAAAAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAAOAAAAAQABAAAAAAAPAAAAAQABAAAAAAATAAAAAQABAAAAAAARAAAAAQABAAAAAAAQAAAAAQABAAAAAAAZAAAAAQABAAAAAAAaAAAAAQABAAAAAAAbAAAAAQABAAAAAAAcAAAAAQABAAAAAAAdAAAAAQABAAAAAAAeAAAAAQABAAAAAAAfAAAAAQABAAAAAAAgAAAAAQABAAAAAAAhAAAAAQABAAAAAAAiAAAAAQABAAAAAAAjAAAAAQABAAAAAAAkAAAAAQABAAAAAAAlAAAAAQABAAAAAAAmAAAAAQABAAAAAAAnAAAAAQABAAAAAAAoAAAAAQABAAAAAAApAAAAAQABAAAAAAAqAAAAAQABAAAAAAArAAAAAQABAAAAAAAsAAEAAQACAAEAAAAsAAIAAQACAAEAAAAsAAMAAQACAAEAAAAsAAQAAQACAAEAAAAsAAUAAQACAAEAAAAsAAYAAQACAAEAAAAsAAcAAQACAAEAAAAsAAgAAQACAAEAAAAsAAkAAQACAAEAAAAsAAoAAQACAAEAAAAsABEAAQACAAEAAAAsABIAAQACAAEAAAAsABMAAQACAAEAAAAsABQAAQACAAEAAAAsABUAAQACAAEAAAAsABYAAQACAAEAAAAsABcAAQACAAEAAAAsABgAAQACAAEAAAAsABAAAQACAAEAAAAsAA8AAQACAAEAAAAsAA4AAQACAAEAAAAsAA0AAQACAAEAAAAsAAwAAQACAAEAAAAsAAsAAQACAAEAAAArABkAAQABAAIAAAAqABkAAQABAAIAAAApABkAAQABAAIAAAAoABkAAQABAAIAAAAnABkAAQABAAIAAAAmABkAAQABAAIAAAAlABkAAQABAAIAAAAkABkAAQABAAIAAAAjABkAAQABAAIAAAAiABkAAQABAAIAAAAhABkAAQABAAIAAAAgABkAAQABAAIAAAAfABkAAQABAAIAAAAeABkAAQABAAIAAAAdABkAAQABAAIAAAAcABkAAQABAAIAAAAbABkAAQABAAIAAAAaABkAAQABAAIAAAAZABkAAQABAAIAAAAYABkAAQABAAIAAAAXABkAAQABAAIAAAAWABkAAQABAAIAAAAVABkAAQABAAIAAAAUABkAAQABAAIAAAATABkAAQABAAIAAAASABkAAQABAAIAAAARABkAAQABAAIAAAAQABkAAQABAAIAAAAPABkAAQABAAIAAAAOABkAAQABAAIAAAANABkAAQABAAIAAAAMABkAAQABAAIAAAALABkAAQABAAIAAAAKABkAAQABAAIAAAAJABkAAQABAAIAAAAIABkAAQABAAIAAAAHABkAAQABAAIAAAAGABkAAQABAAIAAAAFABkAAQABAAIAAAAEABkAAQABAAIAAAADABkAAQABAAIAAAACABkAAQABAAIAAAABABkAAQABAAIAAAAAABgAAQAAAAEAAAAAABcAAQAAAAEAAAAAABYAAQAAAAEAAAAAABUAAQAAAAEAAAAAABQAAQAAAAEAAAAAABMAAQAAAAEAAAAAABIAAQAAAAEAAAAAABEAAQAAAAEAAAAAABAAAQAAAAEAAAAAAA8AAQAAAAEAAAAAAA4AAQAAAAEAAAAAAA0AAQAAAAEAAAAAAAwAAQAAAAEAAAAAAAsAAQAAAAEAAAAAAAoAAQAAAAEAAAAAAAkAAQAAAAEAAAAAAAgAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAYAAQAAAAEAAAAAAAUAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAsABkAAQACAAIAAAAsAAAAAQACAAAAAAAAAAEAAQAAAAEAAAAAABkAAQAAAAIAAAAUAAAAAQABAAAAAAAVAAAAAQABAAAAAAAWAAAAAQABAAAAAAAXAAAAAQABAAAAAAAYAAAAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_0pi4t")
+
+[node name="Grass" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(360, 208)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_orcn5")
+region_enabled = true
+region_rect = Rect2(0, 0, 1440, 832)
+
+[node name="Cats" type="Node2D" parent="."]
+script = SubResource("GDScript_o0w52")
+
+[node name="Pen" parent="." instance=ExtResource("7_rgsc3")]
+position = Vector2(352, 200)
+
+[node name="Gate" parent="." instance=ExtResource("8_2xy0p")]
+position = Vector2(352, 200)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("9_uf0nv")
+
+[node name="CatsLabel" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Message" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.5
+offset_top = -129.0
+offset_right = 229.5
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.952941, 1, 0.964706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "HERDING CATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Submessage" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -237.0
+offset_top = -171.0
+offset_right = 237.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "Press any key to start
+Press space to open/close gate"
+horizontal_alignment = 1
+vertical_alignment = 1

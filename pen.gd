@@ -1,17 +1,11 @@
 extends Node2D
 
-var captured_cats: int
-
-func _ready() -> void:
-	var captured_cats = 0
-
 func _on_cat_detection_body_entered(body: Node2D) -> void:
-	if body.name == "Cat":
-		captured_cats += 1
-		if captured_cats == Game.NUM_CATS:
-			print("YOU WON!!!!!!!!")
-		
+	if body is Cat:
+		Game.captured_cats += 1
+		$"../HUD".update_cats()
 
 func _on_cat_detection_body_exited(body: Node2D) -> void:
-	if body.name == "Cat":
-		captured_cats -= 1
+	if body is Cat:
+		Game.captured_cats -= 1
+		$"../HUD".update_cats()
